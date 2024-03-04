@@ -1,0 +1,320 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: var(--fontJost)
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+
+/* GENERALE */
+
+:root {
+    --fontJost: "DM Sans", sans-serif;
+    --borderRadius: 10px;
+    --radius: 8px;
+    --background: #24579a;
+    --colorFont: #ffffff;
+    --backgroundCards: #24579a;
+}
+
+/* grid */ /* 1fr 1fr 1fr 1fr; */
+
+.container {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px 200px calc(100vh - 700px);
+    gap: 40px 10px;
+    grid-auto-flow: row;
+    align-items: stretch;
+    grid-template-areas:
+      "date-heure date-heure Temps-et-temperature-du-jour Temps-et-temperature-du-jour  vitesse-et-direction-du-vent vitesse-et-direction-du-vent"
+      "jour-ou-nuit jour-ou-nuit Temps-et-temperature-du-jour Temps-et-temperature-du-jour vitesse-et-direction-du-vent vitesse-et-direction-du-vent"
+      "temperature-et-precipitation-heure-par-heure temperature-et-precipitation-heure-par-heure temperature-et-precipitation-heure-par-heure temperature-et-precipitation-heure-par-heure temperature-et-precipitation-heure-par-heure temperature-et-precipitation-heure-par-heure"
+      "prevision-sur-sept-jours prevision-sur-sept-jours prevision-sur-sept-jours prevision-sur-sept-jours prevision-sur-sept-jours prevision-sur-sept-jours";
+    height: 100vh;
+    padding: 10px;
+    background-color: var(--background);
+    }
+
+/* flex box */
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flexColumne {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* titre */
+
+p, h1, h2, h3, h4 {
+    color: var(--colorFont);
+}
+h1 {
+}
+
+h2 {
+}
+h3 {
+   font-size: 16px;
+   font-weight: 600;
+}
+h4 {
+    text-align: center;
+}
+
+p {
+    font-size: 12px;
+}
+
+ /* affichage picto wheither largeur 196*/
+
+.pictoWeither { 
+    width : 197px; 
+    height : 196px;
+    display: inline-block;
+    background-image: url("./img/pictos-weather.png"); 
+    background-repeat: no-repeat;
+}
+.pictoOrage{
+    background-position: 0 0;
+}
+.pictoPluie{
+    background-position: 0 -196px;
+}
+.pictoCouvertSoleil{
+    background-position: 0 -392px;
+}
+.pictoCouvert{
+    background-position: 0 -588px;
+}
+.pictoVent{
+    background-position: 0 -795px;
+}
+.pictoSoleil{
+    background-position: 0 -995px;
+}
+.pictoNeige{
+    background-position: 0 -1195px;
+}
+
+ /* affichage picto wheither largeur 90*/
+
+ .pictoWeitherW90 { 
+    width : 90px; 
+    height : 90px;
+    background-image: url("./img/pictos-weatherW90.png");
+    background-repeat: no-repeat;
+}
+.pictoOrageW90{
+    background-position: 0 0;
+}
+.pictoPluieW90{
+    background-position: 0 -90px;
+}
+.pictoCouvertSoleilW90{
+    background-position: 0 -185px;
+}
+.pictoCouvertW90{
+    background-position: 0 -270px;
+}
+.pictoVentW90{
+    background-position: 0 -360px;
+}
+.pictoSoleilW90{
+    background-position: 0 -450px;
+}
+.pictoNeigeW90{
+    background-position: 0 -540px;
+}
+
+  /* carousel */
+  
+.carousel-container{
+    width : 100%;
+    /*On active le scroll sur X pour voir ce qui dépasse du container*/
+    overflow-x: scroll; 
+    /*Permet d'arreter le scroll au début d'une vignette*/
+    scroll-snap-type: x mandatory;
+    /*Ebauche de customisation de la scrollbar (cf documentation si vous voulez aller plus loin)*/
+    scrollbar-color: rgb(134, 134, 134) rgb(225, 225, 225);
+    scrollbar-width:auto;
+    padding: 8px 0;
+}
+.carousel-slides{
+    display: flex;
+    flex-wrap: nowrap;
+    width: fit-content;
+    gap: 16px;
+}
+.carousel-item{
+    /*Permet d'arreter le scroll au début d'une vignette, couplé avec le scroll-snaptype sur le parent*/
+    scroll-snap-align: start;
+    width : 250px;
+    position: relative;
+    border-radius: var(--radius);
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+}
+/*
+.carousel1-item div{
+    border-radius: var(--radius);
+    padding: 16px;
+    position: absolute;
+    bottom:0;
+    background: rgb(1,0,20);
+    background: linear-gradient(0deg, rgba(1,0,20,1) 0%, rgba(255,255,255,0) 100%);
+}
+*/
+/* caroussel meteo 24 heures */
+.temperature-et-precipitation-heure-par-heure {
+   
+}
+
+.carousel-item24Heures {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100px;
+    height: 150px;
+}
+.carousel-item24Heures>div{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.carousel-item24Heures>div div{
+    width: 20%;
+}
+.carousel-item24Heures>div p{
+    text-align: left;
+    margin-left: 2%;
+}
+.carousel-item24Heures img{
+    border-radius: var(--radius);
+    width: 100%;
+    height: auto;
+    display: block;
+
+}
+.carousel-item24Heures p{
+    text-align: center;
+}
+
+/* caroussel meteo 6 jours */
+.carousel-item6Jours{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    height: 250px;
+    padding: 1%;
+
+}
+.carousel-item6Jours div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-item6Jours p{
+    text-align: center;
+}
+
+/* vitesse-et-direction-du-vent */
+
+.vitesse-et-direction-du-vent {
+    display: flex;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+.vent {
+    display: flex;
+    align-items:center;
+    width: 100%;
+}
+.compass {
+    position:relative;
+    width : 90px; 
+    height: 100px;
+    background-image: url("./img/compass.png");
+    background-repeat: no-repeat;
+    background-size: contain; 
+    background-position: center;  
+    margin: 2%;
+}
+.compass-arrow {
+    position:absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+}
+
+
+
+/* temperature et temps de la journée */
+.Temps-et-temperature-du-jour {
+    display: flex;
+    border: 1px solid gray;
+    border-radius: 10px;
+
+}
+.temps-Temperature-jour {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap:5px;
+
+}
+.temps-Temperature-jour .pictoWeitherW90 {
+    width: 90px;
+    background-repeat: no-repeat;
+    margin-left: 2%;
+    margin: 2%; 
+}
+
+  /* media */
+  .date-heure { grid-area: date-heure; }
+  
+  .jour-ou-nuit { grid-area: jour-ou-nuit; }
+  
+  .Temps-et-temperature-du-jour { grid-area: Temps-et-temperature-du-jour; }
+  
+  .vitesse-et-direction-du-vent { grid-area: vitesse-et-direction-du-vent; }
+  
+  .vide-en-haut-a-droite { grid-area: vide-en-haut-a-droite; }
+  
+  .vide-gauche { grid-area: vide-gauche; }
+  
+  .temperature-et-precipitation-heure-par-heure { grid-area: temperature-et-precipitation-heure-par-heure; }
+  
+  .prevision-sur-sept-jours { grid-area: prevision-sur-sept-jours; }
+
+  @media all and (max-width:600px) { 
+
+    
+.container {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+    gap: 5px 5px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "date-heure date-heure date-heure date-heure date-heure date-heure"
+      "jour-ou-nuit jour-ou-nuit jour-ou-nuit jour-ou-nuit jour-ou-nuit jour-ou-nuit"
+      "Temps-et-temperature-du-jour Temps-et-temperature-du-jour Temps-et-temperature-du-jour Temps-et-temperature-du-jour Temps-et-temperature-du-jour Temps-et-temperature-du-jour"
+      "vitesse-et-direction-du-vent vitesse-et-direction-du-vent vitesse-et-direction-du-vent vitesse-et-direction-du-vent vitesse-et-direction-du-vent vitesse-et-direction-du-vent"
+      "vide-en-haut-a-droite vide-en-haut-a-droite vide-en-haut-a-droite vide-en-haut-a-droite vide-en-haut-a-droite vide-en-haut-a-droite"
+      "vide-gauche vide-gauche vide-gauche vide-gauche vide-gauche vide-gauche"
+      "temperature-et-precipitation-heure-par-heure temperature-et-precipitation-heure-par-heure temperature-et-precipitation-heure-par-heure temperature-et-precipitation-heure-par-heure temperature-et-precipitation-heure-par-heure temperature-et-precipitation-heure-par-heure"
+      "prevision-sur-sept-jours prevision-sur-sept-jours prevision-sur-sept-jours prevision-sur-sept-jours prevision-sur-sept-jours prevision-sur-sept-jours";
+    padding: 2%;
+    }
+  }

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        
+        <div class="container">
+
+            <!-- date et heure -->
+            <div class="date-heure flexColumne">
+                <!-- date et heure inseré avec fonction js 
+                <p>date courente</p> 
+                <p>heure courente</p>  -->
+            </div>
+
+              <!-- jour ou nuit -->
+            <!-- integration en bgk picto classe ajouter ou enlever class .jour ou . nuit -->
+            <div class="jour-ou-nuit flex">
+                <!-- insertion js 
+                <p>ville de montpellier</p>
+                -->
+            </div>
+
+            <!-- temps et temperature du jour -->
+            <!-- integration en bgk picto classe ajouter en fonction du type de temps -->
+            <div class="Temps-et-temperature-du-jour ">
+                <div class=" temps-Temperature-jour ">
+                    <!-- 
+                    <div class="pictoWeitherW90 ${classPicto}"></div>
+                    <div>
+                        <h3>Tendance de la journée</h3>
+                        <p>${tendanceMeteo}</p>
+                        <p>T° max : ${temperatureMax} °C</p>
+                        <p>T° min : ${temperatureMin} °C</p>
+                    </div> -->
+                </div>
+            </div>
+
+            <!-- vitesse-et-direction-du-vent -->
+            <!-- integration en bgk picto classe boussole -->
+            <!-- animation sur class boussolleFleche -->
+            <div class="vitesse-et-direction-du-vent">
+                <div class="vent">
+                    <!-- <div class="compass">
+                        <div class="compass-arrow">
+                            <img src="./img/compass-arrow.png" alt="">
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Vitesse et direction du vent</h3>
+                        <p>Vitesse du vent : ${vitesseVent} km/h</p>
+                    </div> -->
+                </div>
+            </div>
+            <!-- meteo 24 heure -->
+            <div class="temperature-et-precipitation-heure-par-heure">
+                <h3>Heure par heure</h3>
+                <!-- carousel heure par heure -->
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+
+            <!-- elts créés par fonction showMeteoUneHeure()   
+                <div class="carousel-item carousel-item24Heures">
+                            <div >
+                                <div>
+                                    <img src="./img/thermometer.png" alt="">
+                                </div>
+                                <p>10 °C</p>
+                            </div>
+                            <div class="precipitation">
+                                <div>
+                                    <img src="./img/umbrella.png" alt="">
+                                </div>
+                                <p>180 mm</p>
+                            </div>
+                            <p>Heure</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- meteo 6 jours -->
+            <div class="prevision-sur-sept-jours">
+                <h3>Meteo six jours</h3>
+                <!-- carousel 6 jours -->
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        <!-- ajouter par function showMeteoJournee()
+                         <div class="carousel-item carousel-item6Jours">
+                            <h4>${date}</h4>
+                            <p>${tendenceMeteo}</p>
+                            <div>
+                                <div class="pictoWeitherW90 ${classPicto}"></div>
+                            </div>
+                            <p>T° de ${temperatureMin} à ${temperatureMax} °C</p>
+                         </div>
+                        -->
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <script src="./js/app.js"></script>
+    </body>
+</html>
